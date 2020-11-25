@@ -1,3 +1,91 @@
-h1, h2 {
-  font-family: Lato;
+:root {
+  --main-radius: 5px;
+  --main-padding: 5px;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+#app {
+  text-align: center;
+  font-weight: bolder;
+  border-bottom: 4px solid black;
+}
+.container {
+  padding-top: 20px;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+  grid-template-areas:
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar container1 container2 container3"
+    "sidebar footer footer footer";
+  grid-gap: 0.2rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+nav {
+  background: #ff8000;
+  grid-area: nav;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+main {
+  background: #ffff00;
+  grid-area: main;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+#sidebar {
+  background: #00ffff;
+  grid-area: sidebar;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#container1 {
+  background: #4000ff;
+  grid-area: container1;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#container2 {
+  background: #ff00ff;
+  grid-area: container2;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#container3 {
+  background: #ff0080;
+  grid-area: container3;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+footer {
+  background: #ff0000;
+  grid-area: footer;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+    grid-template-areas:
+      "nav"
+      "sidebar"
+      "main"
+      "container1"
+      "container2"
+      "container3"
+      "footer";
+  }
 }
